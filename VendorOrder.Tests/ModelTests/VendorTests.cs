@@ -79,7 +79,7 @@ namespace VendorOrder.Tests {
       //Act
       Vendor result = Vendor.Find(2);
       //Assert
-      Assert.AreEqual(testVendor1, result);
+      Assert.AreEqual(testVendor2, result);
     }
   }
 }
