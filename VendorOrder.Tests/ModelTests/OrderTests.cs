@@ -4,8 +4,8 @@ using System;
 using VendorOrder.Models;
 // title(eventually replace with ID), description, price, date
 // create instance of Order  X
-// get properties, return properties
-// GetAll, return list, **IDispose
+// get properties, return properties  X
+// GetAll, return list, **IDispose  
 // GetAll, retun list of orders 
 // AssignId, return Id
 // FindOrder by Id, return order by Id
@@ -31,8 +31,8 @@ namespace VendorOrder.Tests {
       //Act
       string result = testOrder.Title;
       //Assert
-      Assert.AreEqual(title, "");
-
+      Assert.AreEqual(title, "title");
     }
+
   }
 }
