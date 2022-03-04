@@ -4,5 +4,21 @@
 <!--  add new order form
       new order object should be saved into a static List
       & link to vendors-->
+<h3>@Model.Name</h3><hr>
+<h5>Add New Order</h5><br>
+<form action="/vendors" method="post">
+  <div class="form-group">
+    <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+    <label for="title">Order Number: </label>
+    <input id="title" name="title" type="text">
+    <label for="description">Description: </label>
+    <input id="description" name="description" type="text">
+    <label for="price">Total: $</label>
+    <input id="price" name="price" type="text">
+    <label for="date">Order Date:</label>
+    <input id="date" name="date" type="text">
+    <button type='submit'>Add</button>
+  </div>
+</form><br>
+<p><a href="/vendors">Back to vendors</a></p>
 <p><a href='/'>Back home</a></p>
-
