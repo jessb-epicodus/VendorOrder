@@ -74,7 +74,7 @@ namespace VendorOrder.Tests {
       //Act
       int result = testOrder2.Id;
       //Assert
-      Assert.AreEqual(1, result);
+      Assert.AreEqual(2, result);
     }
   }
 }
