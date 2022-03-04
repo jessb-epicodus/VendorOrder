@@ -74,7 +74,7 @@ namespace VendorOrder.Tests {
       Assert.AreEqual(1, result);
     }
     [TestMethod]
-    public void Find_ReturnsCorrectOrder_Order() {
+    public void Find_FindsOrderById_Order() {
       //Arrange
       string title = "title";
       string description = "description";

@@ -7,7 +7,7 @@ using VendorOrder.Models;
 // get properties, return properties  X
 // clearall/getall **IDispose  X
 // getall, retun list of Vendor  X
-// AssignId, return Id
+// AssignId, return Id  X
 // Find vendor by Id, return Vendor by Id
 // stretch find vendor by name
 namespace VendorOrder.Tests {
@@ -68,6 +68,18 @@ namespace VendorOrder.Tests {
       int result = testVendor.Id;
       //Assert
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void Find_FindsVendorById_Vendor() {
+      //Arrange
+      string title = "title";
+      string description = "description";
+      Vendor testVendor1 = new Vendor(title, description);
+      Vendor testVendor2 = new Vendor(title, description);
+      //Act
+      Vendor result = Vendor.Find(2);
+      //Assert
+      Assert.AreEqual(testVendor1, result);
     }
   }
 }
