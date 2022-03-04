@@ -12,9 +12,9 @@ namespace VendorOrder.Models {
     {
       Name = name;
       Description = description;
+      Id = _instances.Count;
       Orders = new List<Order>{};
       _instances.Add(this);
-      Id = _instances.Count;
     }
     public static List<Vendor> GetAll() {
       return _instances;

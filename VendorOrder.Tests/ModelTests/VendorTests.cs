@@ -83,13 +83,11 @@ namespace VendorOrder.Tests {
       Assert.AreEqual(testVendor2, result);
     }
     [TestMethod]
-    public void AddOrder_AssociatesOrderWithVendor_OrderList() {
+    public void AddOrder_AssociateOrdersWithVendor_OrderList() {
       //Arrange
-      string description = "Walk the dog.";
-      Order testOrder = new Order(description);
+      Order testOrder = new  Order("title", "description", 100, "date");
       List<Order> testList = new List<Order> { testOrder };
-      string name = "Work";
-      Vendor testVendor = new Vendor(name);
+      Vendor testVendor = new Vendor(title, description);
       testVendor.AddOrder(testOrder);
       //Act
       List<Order> result = testVendor.Orders;
