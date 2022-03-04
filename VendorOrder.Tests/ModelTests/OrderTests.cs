@@ -54,11 +54,11 @@ namespace VendorOrder.Tests {
       string date = "date";
       Order testOrder1 = new Order(title, description, price, date);
       Order testOrder2 = new Order(title, description, price, date);
-      List<Order>  newList = new List<Order> { testOrder1, testOrder2 };
+      List<Order> testList = new List<Order> { testOrder1, testOrder2 };
       //Act
       List<Order> result = Order.GetAll();
       //Assert
-      CollectionAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(testList, result);
     }
     [TestMethod]
     public void AssignId_AssignIdToIstantiatedOrder_Int() {
