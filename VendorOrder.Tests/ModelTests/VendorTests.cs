@@ -5,8 +5,8 @@ using VendorOrder.Models;
 // name, list<order>
 // create instance of vendor  X
 // get properties, return properties  X
-// GetAll, return list, **IDispose  
-// GetAll, retun list of Vendor
+// clearall/getall **IDispose  X
+// getall, retun list of Vendor  X
 // AssignId, return Id
 // Find vendor by Id, return Vendor by Id
 // stretch find vendor by name
@@ -37,7 +37,7 @@ namespace VendorOrder.Tests {
       Assert.AreEqual(name, result);
     }
     [TestMethod]
-    public void ClearAllGetAll_ClearStaticList_OrderList() {
+    public void ClearAllGetAll_ClearStaticList_VendorList() {
       //Arrange
       List<Vendor> testList = new List<Vendor> {};
       //Act
@@ -57,6 +57,17 @@ namespace VendorOrder.Tests {
       List<Vendor> result = Vendor.GetAll();
       //Assert
       CollectionAssert.AreEqual(testList, result);
+    }
+    [TestMethod]
+    public void AssignId_AssignIdToIstantiatedVendor_Int() {
+      //Arrange
+      string title = "title";
+      string description = "description";
+      Vendor testVendor = new Vendor(title, description);
+      //Act
+      int result = testVendor.Id;
+      //Assert
+      Assert.AreEqual(1, 2);
     }
   }
 }

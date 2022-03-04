@@ -5,8 +5,8 @@ using VendorOrder.Models;
 // title(eventually replace with ID), description, price, date
 // create instance of Order  X
 // get properties, return properties  X
-// GetAll, return list, **IDispose  X
-// GetAll, retun list of orders  X
+// clearall/getall **IDispose  X
+// getall, retun list of orders  X
 // AssignId, return Id  X
 // FindOrder by Id, return order by Id  X
 namespace VendorOrder.Tests {
