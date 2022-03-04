@@ -12,9 +12,9 @@ namespace VendorOrder.Models {
     {
       Name = name;
       Description = description;
+      _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};
-      _instances.Add(this);
     }
     public static List<Vendor> GetAll() {
       return _instances;
@@ -26,7 +26,7 @@ namespace VendorOrder.Models {
       return _instances[searchId - 1];
     }
     public void AddOrder(Order order) {
-      Orders.Add(Order);
+      Orders.Add(order);
     }
   }
 }

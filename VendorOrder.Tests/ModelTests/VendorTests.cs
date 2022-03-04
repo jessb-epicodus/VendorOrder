@@ -87,7 +87,7 @@ namespace VendorOrder.Tests {
       //Arrange
       Order testOrder = new  Order("title", "description", 100, "date");
       List<Order> testList = new List<Order> { testOrder };
-      Vendor testVendor = new Vendor(title, description);
+      Vendor testVendor = new Vendor("title", "description");
       testVendor.AddOrder(testOrder);
       //Act
       List<Order> result = testVendor.Orders;
