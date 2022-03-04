@@ -6,7 +6,7 @@ using VendorOrder.Models;
 // create instance of Order  X
 // get properties, return properties  X
 // GetAll, return list, **IDispose  X
-// GetAll, retun list of orders 
+// GetAll, retun list of orders X
 // AssignId, return Id
 // FindOrder by Id, return order by Id
 namespace VendorOrder.Tests {
@@ -27,10 +27,10 @@ namespace VendorOrder.Tests {
     public void OrderDetails_ReturnsOrderDetail_OrderDetail() {
       //Arrange
       string title = "title";
-      // string description = "description";
-      // int price = 100;
-      // string date = "date";
-      Order testOrder = new Order("title", "description", 100, "date");
+      string description = "description";
+      int price = 100;
+      string date = "date";
+      Order testOrder = new Order(title, description, price, date);
       //Act
       string result = testOrder.Title;
       //Assert
@@ -44,6 +44,22 @@ namespace VendorOrder.Tests {
       List<Order> result = Order.GetAll();
       //Assert
       CollectionAssert.AreEqual(testList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsOrder_ItemList()
+    {
+      //Arrange
+      string title = "title";
+      string description = "description";
+      int price = 100;
+      string date = "date";
+      Order testOrder1 = new Order(title, description, price, date);
+      Order testOrder2 = new Order(title, description, price, date);
+      List<Order>  newList = new List<Order> { testOrder1, testOrder2 };
+      //Act
+      List<Order> result = Order.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
