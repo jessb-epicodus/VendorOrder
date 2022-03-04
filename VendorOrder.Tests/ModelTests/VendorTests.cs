@@ -8,7 +8,8 @@ using VendorOrder.Models;
 // clearall/getall **IDispose  X
 // getall, retun list of Vendor  X
 // AssignId, return Id  X
-// Find vendor by Id, return Vendor by Id
+// Find vendor by Id, return Vendor by Id  X
+// add oder to vendor
 // stretch find vendor by name
 namespace VendorOrder.Tests {
   [TestClass]
@@ -80,6 +81,20 @@ namespace VendorOrder.Tests {
       Vendor result = Vendor.Find(2);
       //Assert
       Assert.AreEqual(testVendor2, result);
+    }
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList() {
+      //Arrange
+      string description = "Walk the dog.";
+      Order testOrder = new Order(description);
+      List<Order> testList = new List<Order> { testOrder };
+      string name = "Work";
+      Vendor testVendor = new Vendor(name);
+      testVendor.AddOrder(testOrder);
+      //Act
+      List<Order> result = testVendor.Orders;
+      //Assert
+      CollectionAssert.AreEqual(testList, result);
     }
   }
 }
