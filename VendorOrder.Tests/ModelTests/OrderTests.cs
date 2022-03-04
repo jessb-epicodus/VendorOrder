@@ -33,6 +33,15 @@ namespace VendorOrder.Tests {
       //Assert
       Assert.AreEqual(title, "title");
     }
-
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      //Arrange
+      List<Order> testOrder = new List<Order> { };
+      //Act
+      List<Order> result = Order.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(testOrder, result);
+    }
   }
 }
