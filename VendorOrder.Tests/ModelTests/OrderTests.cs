@@ -5,13 +5,16 @@ using VendorOrder.Models;
 // title(eventually replace with ID), description, price, date
 // create instance of Order  X
 // get properties, return properties  X
-// GetAll, return list, **IDispose  
+// GetAll, return list, **IDispose  X
 // GetAll, retun list of orders 
 // AssignId, return Id
 // FindOrder by Id, return order by Id
 namespace VendorOrder.Tests {
   [TestClass]
-  public class OrderTests {
+  public class OrderTests : IDisposable {
+    public void Dispose() {
+      Order.ClearList();
+    }
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order() {  
       // arrange
@@ -34,14 +37,13 @@ namespace VendorOrder.Tests {
       Assert.AreEqual(title, "title");
     }
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_OrderList()
-    {
+    public void GetAll_ReturnsEmptyList_OrderList() {
       //Arrange
-      List<Order> testOrder = new List<Order> { };
+      List<Order> testList = new List<Order> {};
       //Act
       List<Order> result = Order.GetAll();
       //Assert
-      CollectionAssert.AreEqual(testOrder, result);
+      CollectionAssert.AreEqual(testList, result);
     }
   }
 }

@@ -18,5 +18,8 @@ namespace VendorOrder.Models {
     public static List<Order> GetAll() {
       return _instances;
     }
+    public static void ClearList() {
+      _instances.Clear();
+    }
   }
 }
