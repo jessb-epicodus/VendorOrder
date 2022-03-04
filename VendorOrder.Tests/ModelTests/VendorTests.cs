@@ -16,10 +16,21 @@ namespace VendorOrder.Tests {
     [TestMethod]
     public void VendorConstructor_CreateInstanceOfVendor_Vendor() {  
       //Arrange
-      Vendor testVendor = new Vendor();
+      Vendor testVendor = new Vendor("test");
       //Act
       //Assert
       Assert.AreEqual(typeof(Vendor), testVendor.GetType());
+    }
+    [TestMethod]
+    public void VendorDetails_ReturnsDetails_String()
+    {
+      //Arrange
+      string name = "test";
+      Vendor testVendor = new Vendor(name);
+      //Act
+      string result = testVendor.Name;
+      //Assert
+      Assert.AreEqual(name, "fail");
     }
   }
 }
