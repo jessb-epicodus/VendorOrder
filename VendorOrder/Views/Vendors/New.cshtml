@@ -1,14 +1,10 @@
 @{
   Layout = "_Layout";
 }
-<!--  add new vendor form
-      new Vendor object should be saved into a static List
-      directions say to rout routed user to homepage but it makes more sense to rout back to vendor/show page
-      & link to vendors/index-->
-<h5>Add New Vendor</h5><hr>
+<h3>Add Vendor</h3><hr>
 <form action="/vendors" method="post">
   <div class="form-group">
-    <label for="name">Company Name: </label>
+    <label for="name">Company: </label>
     <input id="name" name="name" type="text">
     <label for="description">Description: </label>
     <input id="description" name="description" type="text">
@@ -25,5 +21,5 @@
     <button type="submit">Add</button>
   </div>
 </form><br>
-<p><a href="/vendors">Back to vendors</a></p>
-<p><a href='/'>Back home</a></p>
+<p><a href="/vendors">Return to Vendors</a></p>
+<p><a href='/'>Return Home</a></p>

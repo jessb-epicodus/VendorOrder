@@ -16,7 +16,7 @@ namespace VendorOrder.Controllers {
     [HttpPost("/vendors")]
     public ActionResult Create(string name, string description) {
       Vendor newVendor = new Vendor(name, description);
-      return RedirectToAction("Index");
+      return RedirectToAction("Index");  // directions are to redirect to "homepage"/splashpage??
     }
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id) {

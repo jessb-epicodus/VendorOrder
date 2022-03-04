@@ -1,0 +1,2 @@
+After the form is submitted, the new Vendor object should be saved into a static List and Pierre should be routed back to the homepage.
+click a Vendor's name and go to a new page that will display all of that Vendor's orders

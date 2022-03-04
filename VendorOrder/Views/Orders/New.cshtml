@@ -1,11 +1,8 @@
 @{
   Layout = "_Layout";
 }
-<!--  add new order form
-      new order object should be saved into a static List
-      & link to vendors-->
 <h3>@Model.Name</h3><hr>
-<h5>Add New Order</h5><br>
+<h5>Add Order</h5><br>
 <form action="/vendors" method="post">
   <div class="form-group">
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
@@ -20,5 +17,5 @@
     <button type='submit'>Add</button>
   </div>
 </form><br>
-<p><a href="/vendors">Back to vendors</a></p>
-<p><a href='/'>Back home</a></p>
+<p><a href="/vendors">Return to Vendors</a></p>
+<p><a href='/'>Return Home</a></p>

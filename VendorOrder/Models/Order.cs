@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-// title, description, price, date
+
 namespace VendorOrder.Models {
   public class Order {
     public string Title { get; set; }

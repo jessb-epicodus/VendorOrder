@@ -1,6 +1,15 @@
 @{
   Layout = "_Layout";
 }
-<!--  show static list of orders
-      & link to add new order -->
-<p><a href='/'>Back home</a></p>
+
+@using VendorOrder.Models;
+<h3>@Model.Name</h3><hr>
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+}
+</ol>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a></p>
+<p><a href='/vendors'>Return to Vendors</a></p>
+<p><a href='/'>Return home</a></p>
