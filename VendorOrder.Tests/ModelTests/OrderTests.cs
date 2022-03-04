@@ -34,10 +34,10 @@ namespace VendorOrder.Tests {
       //Act
       string result = testOrder.Title;
       //Assert
-      Assert.AreEqual(title, "title");
+      Assert.AreEqual(title, result);
     }
     [TestMethod]
-    public void ClearAllGetAll_ClearsStaticList_RList() {
+    public void ClearAllGetAll_ClearStaticList_OrderList() {
       //Arrange
       List<Order> testList = new List<Order> {};
       //Act
