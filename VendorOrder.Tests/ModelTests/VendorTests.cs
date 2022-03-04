@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System;
 using VendorOrder.Models;
 // name, list<order>
-// create instance of vendor
-// get properties, return properties
-// GetAll, return list, **IDispose
+// create instance of vendor  X
+// get properties, return properties  X
+// GetAll, return list, **IDispose  
 // GetAll, retun list of Vendor
 // AssignId, return Id
 // Find vendor by Id, return Vendor by Id
@@ -31,6 +31,15 @@ namespace VendorOrder.Tests {
       string result = testVendor.Name;
       //Assert
       Assert.AreEqual(name, result);
+    }
+    [TestMethod]
+    public void ClearAllGetAll_ClearsStaticList_EmptyList() {
+      //Arrange
+      List<Vendor> testList = new List<Vendor> {};
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(testList, result);
     }
   }
 }

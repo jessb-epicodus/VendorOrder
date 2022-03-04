@@ -13,7 +13,7 @@ namespace VendorOrder.Tests {
   [TestClass]
   public class OrderTests : IDisposable {
     public void Dispose() {
-      Order.ClearList();
+      Order.ClearAll();
     }
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order() {  
@@ -37,7 +37,7 @@ namespace VendorOrder.Tests {
       Assert.AreEqual(title, "title");
     }
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_OrderList() {
+    public void ClearAllGetAll_ClearsStaticList_RList() {
       //Arrange
       List<Order> testList = new List<Order> {};
       //Act
@@ -46,7 +46,7 @@ namespace VendorOrder.Tests {
       CollectionAssert.AreEqual(testList, result);
     }
     [TestMethod]
-    public void GetAll_ReturnsOrder_ItemList() {
+    public void GetAll_ReturnsOrders_OrderList() {
       //Arrange
       string title = "title";
       string description = "description";
@@ -74,7 +74,7 @@ namespace VendorOrder.Tests {
       Assert.AreEqual(1, result);
     }
     [TestMethod]
-    public void Find_ReturnsCorrectItem_Item() {
+    public void Find_ReturnsCorrectOrder_Order() {
       //Arrange
       string title = "title";
       string description = "description";
