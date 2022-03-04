@@ -1,11 +1,12 @@
 using System.Collections.Generic;
-// title(eventually replace with ID), description, price, date
+// title, description, price, date
 namespace VendorOrder.Models {
   public class Order {
     public string Title { get; set; }
     public string Description { get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
+    public int Id { get; } 
     private static List<Order> _instances = new List<Order> {};
 
     public Order(string title, string description, int price, string date) {
@@ -14,6 +15,7 @@ namespace VendorOrder.Models {
       Price = price;
       Date = date;
       _instances.Add(this);
+      Id = _instances.Count;
     }
     public static List<Order> GetAll() {
       return _instances;

@@ -17,10 +17,10 @@ namespace VendorOrder.Tests {
     }
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order() {  
-      // arrange
+      //Arrange
       Order testOrder = new Order("title", "description", 100, "date");
-      // act
-      // assert
+      //Act
+      //Assert
       Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
     [TestMethod]
@@ -60,6 +60,21 @@ namespace VendorOrder.Tests {
       List<Order> result = Order.GetAll();
       //Assert
       CollectionAssert.AreEqual(newList, result);
+    }
+        [TestMethod]
+    public void AssignId_AssignIdToIstantiatedOrder_Int()
+    {
+      //Arrange
+      string title = "title";
+      string description = "description";
+      int price = 100;
+      string date = "date";
+      Order testOrder1 = new Order(title, description, price, date);
+      Order testOrder2 = new Order(title, description, price, date);
+      //Act
+      int result = testOrder2.Id;
+      //Assert
+      Assert.AreEqual(1, result);
     }
   }
 }
