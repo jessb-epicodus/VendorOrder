@@ -30,7 +30,7 @@ namespace VendorOrder.Tests {
       //Act
       string result = testVendor.Name;
       //Assert
-      Assert.AreEqual(name, "fail");
+      Assert.AreEqual(name, result);
     }
   }
 }
