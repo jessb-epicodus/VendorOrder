@@ -1,7 +1,7 @@
-// using System.Collections.Generic;
-// //name, description, list of orders
-// namespace VendorOrder.Models {
-//   public class Vendor {
-
-//   }
-// }
+using System.Collections.Generic;
+//name, description, list of orders
+namespace VendorOrder.Models {
+  public class Vendor {
+    public string CoName { get; }
+  }
+}
