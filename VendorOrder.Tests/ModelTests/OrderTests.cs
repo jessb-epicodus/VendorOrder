@@ -46,8 +46,7 @@ namespace VendorOrder.Tests {
       CollectionAssert.AreEqual(testList, result);
     }
     [TestMethod]
-    public void GetAll_ReturnsOrder_ItemList()
-    {
+    public void GetAll_ReturnsOrder_ItemList() {
       //Arrange
       string title = "title";
       string description = "description";
@@ -61,9 +60,21 @@ namespace VendorOrder.Tests {
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
-        [TestMethod]
-    public void AssignId_AssignIdToIstantiatedOrder_Int()
-    {
+    [TestMethod]
+    public void AssignId_AssignIdToIstantiatedOrder_Int() {
+      //Arrange
+      string title = "title";
+      string description = "description";
+      int price = 100;
+      string date = "date";
+      Order testOrder = new Order(title, description, price, date);
+      //Act
+      int result = testOrder.Id;
+      //Assert
+      Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item() {
       //Arrange
       string title = "title";
       string description = "description";
@@ -72,9 +83,9 @@ namespace VendorOrder.Tests {
       Order testOrder1 = new Order(title, description, price, date);
       Order testOrder2 = new Order(title, description, price, date);
       //Act
-      int result = testOrder2.Id;
+      Order result = Order.Find(2);
       //Assert
-      Assert.AreEqual(2, result);
+      Assert.AreEqual(testOrder2, result);
     }
   }
 }
