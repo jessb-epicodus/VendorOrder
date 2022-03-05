@@ -3,7 +3,7 @@
 }
 <h3>@Model.Name</h3><hr>
 <h5>Add Order</h5><br>
-<form action="/vendors" method="post">
+<form action="/vendors/@Model.Id/orders" method="post">
   <div class="form-group">
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
     <label for="title">Order Number: </label>
