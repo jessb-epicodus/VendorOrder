@@ -2,16 +2,16 @@
   Layout = "_Layout";
 }
 @using VendorOrder.Models;
-
-@* <h3>@Model.Name</h3><hr> *@
-
+<h3>@Model["vendor"].Name</h3><hr>
 <ol>
+@if (@Model["orders"].Count == 0) {
+  <p>No orders have been added</p>
+}
 @foreach (Order order in @Model["orders"])
 {
-  <li><a href='/vendors/@Model["vendor"].Id/oders/@order.Id'>@order.Title</a></li>
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
 }
 </ol>
-
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add new order</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a></p>
 <p><a href='/vendors'>Return to Vendors</a></p>
 <p><a href='/'>Return Home</a></p>

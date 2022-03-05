@@ -1,15 +1,10 @@
 @{
   Layout = "_Layout";
 }
-
-@using VendorOrder.Models;
-<h3>@Model.Name</h3><hr>
-<ol>
-@foreach (Order order in @Model["orders"])
-{
-  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
-}
-</ol>
+<h1>@Model["vendor"].Name</h1><hr>
+<h3>Orders:</h3>
+<h2>@Model["order"].Description</h2>
+<h3>Category: @Model["category"].Name</h3>
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a></p>
 <p><a href='/vendors'>Return to Vendors</a></p>
 <p><a href='/'>Return home</a></p>
