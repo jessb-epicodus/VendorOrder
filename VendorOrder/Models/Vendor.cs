@@ -5,7 +5,6 @@ namespace VendorOrder.Models {
     public string Name { get; set;}
     public string Description {get; set;}
     public int Id { get; } 
-    //stretch: sales contact, email, phone number, notes
     public List<Order> Orders { get; set; }
     private static List<Vendor> _instances = new List<Vendor> {};
 

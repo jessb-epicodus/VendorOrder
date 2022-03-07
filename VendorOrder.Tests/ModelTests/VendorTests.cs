@@ -2,15 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System;
 using VendorOrder.Models;
-// name, list<order>
-// create instance of vendor  X
-// get properties, return properties  X
-// clearall/getall **IDispose  X
-// getall, retun list of Vendor  X
-// AssignId, return Id  X
-// Find vendor by Id, return Vendor by Id  X
-// add oder to vendor
-// stretch find vendor by name
+
 namespace VendorOrder.Tests {
   [TestClass]
   public class VendorTests : IDisposable {
